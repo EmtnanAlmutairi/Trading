@@ -12,7 +12,7 @@ import joblib
 import pytz
 import json
 import os
-
+import traceback
 # ------------------- إعدادات النظام -------------------
 SAUDI_TZ = pytz.timezone('Asia/Riyadh')
 PLANETS = ['sun', 'moon']
@@ -111,3 +111,4 @@ if __name__ == "__main__":
         print("- اتصال الإنترنت يعمل")
         print("- الرمز المالي صحيح (مثال: 2220.SR)")
         print("- وجود مساحة كافية على القرص")
+        traceback.print_exc()

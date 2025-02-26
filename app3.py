@@ -14,11 +14,10 @@ import pytz
 import json
 import os
 import ephem
-
+import traceback
 # ------------------- إعدادات النظام -------------------
 SAUDI_TZ = pytz.timezone('Asia/Riyadh')
-PLANETS = ['sun', 'moon', 'mercury', 'venus', 'mars', 
-          'jupiter', 'saturn', 'uranus', 'neptune', 'pluto']
+PLANETS = ['sun', 'moon', 'mercury', 'venus', 'mars']
 REPORT_DIR = 'النتائج'
 MODEL_DIR = 'نماذج'
 os.makedirs(REPORT_DIR, exist_ok=True)
@@ -45,7 +44,7 @@ class AstroPatternDetector:
         for planet in PLANETS:
             body = self.eph[planet]
             astro = earth.at(t).observe(body)
-            ecliptic_lat, ecliptic_lon = astro.ecliptic_latlon()
+            a, ecliptic_lon,b = astro.ecliptic_latlon()
             positions[planet] = ecliptic_lon.degrees % 360
             
         return positions
@@ -85,10 +84,7 @@ class AstroPatternDetector:
     def calculate_planetary_cycles(self):
         return {
             'mercury': 88, 'venus': 225, 'mars': 687,
-            'jupiter': 4333, 'saturn': 10759,
-            'uranus': 30685, 'neptune': 60190, 'pluto': 90520
         }
-
     def predict_future_extremes(self, clusters, years=5):
         predictions = []
         today = datetime.now()
@@ -157,7 +153,33 @@ class SelfLearningAstroTrader(AstroPatternDetector):
             return joblib.load(f'{MODEL_DIR}/{self.stock_symbol}_model.pkl')
         except:
             return MLPClassifier(hidden_layer_sizes=(50,), max_iter=1000)
-            
+    
+    def detect_aspects(self, planetary_positions, orb=5):
+        aspects = []
+        planets = list(planetary_positions.keys())
+        aspect_config = {
+            # (الزاوية, الحد الأقصى للتفاوت)
+            'اقتران': (0, 8),
+            'سداسي': (60, 5),
+            'تربيع': (90, 6),
+            'ثالثي': (120, 5),
+            'تقابل': (180, 8)
+        }
+
+        for i in range(len(planets)):
+            for j in range(i + 1, len(planets)):
+                planet1 = planets[i]
+                planet2 = planets[j]
+                angle_diff = abs(planetary_positions[planet1] - planetary_positions[planet2]) % 360
+                angle_diff = min(angle_diff, 360 - angle_diff)
+
+                for aspect_name, (aspect_angle, aspect_orb) in aspect_config.items():
+                    if abs(angle_diff - aspect_angle) <= aspect_orb:
+                        aspects.append(aspect_name)
+                        break  # لتجنب تكرار الجوانب
+
+        return aspects
+
     def daily_data_pipeline(self):
         new_data = yf.download(self.stock_symbol, period='1d')
         positions = self.calculate_planetary_positions(self.today)
@@ -167,47 +189,65 @@ class SelfLearningAstroTrader(AstroPatternDetector):
         return X, y
     
     def prepare_astro_features(self, positions, aspects):
-        features = list(positions.values())
+        features = list(positions.values())  # Get planetary positions
+
+        aspect_counts = {
+            'اقتران': 0,
+            'سداسي': 0,
+            'تربيع': 0,
+            'ثالثي': 0,
+            'تقابل': 0
+        }
         
-        aspect_types = {'اقتران':0, 'تربيع':0, 'تقابل':0}
         for aspect in aspects:
-            key = aspect.split()[0]
-            aspect_types[key] += 1
-        features += list(aspect_types.values())
-        
-        features.append(self.is_retrograde(self.today))
-        
-        return np.array(features).reshape(1, -1)
-    
+            if aspect in aspect_counts:
+                aspect_counts[aspect] += 1
+
+        features += list(aspect_counts.values())
+        features.append(self.is_retrograde(self.today))  # Retrograde status
+
+        # Ensure it is a 2D array
+        return np.array(features).reshape(1, -1)  # Shape is (1, number_of_features)
     def is_retrograde(self, date):
         t = self.ts.utc(date.year, date.month, date.day)
         mercury = self.eph['mercury']
         earth = self.eph['earth']
         velocity = earth.at(t).observe(mercury).apparent().velocity.km_per_s
-        return 1 if velocity < 0 else 0
+        return 1 if np.all(velocity < 0 )else 0
     
     def calculate_price_movement(self, prices):
         open_price = prices.iloc[0]
         close_price = prices.iloc[-1]
-        return 1 if close_price > open_price else 0
+        return 1 if np.all(close_price > open_price ) else 0
     
     def update_model(self, X, y):
         try:
+            # Ensure X and y are numpy arrays
+            X = np.array(X)
+            y = np.array(y)
+
+            if X.size == 0 or y.size == 0:
+                print("Warning: X or y is empty. Cannot update model.")
+                return
+            
+            # Load historical training data
             history = joblib.load(f'{MODEL_DIR}/{self.stock_symbol}_training_data.pkl')
             X_hist, y_hist = history['X'], history['y']
+            
+            # Ensure historical data is also numpy arrays
+            X_hist = np.array(X_hist)
+            y_hist = np.array(y_hist)
+
             X = np.vstack([X_hist, X])
             y = np.concatenate([y_hist, y])
-        except:
-            pass
-        
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
-        self.model.partial_fit(X_train, y_train, classes=[0, 1])
-        
-        joblib.dump({'X':X, 'y':y}, f'{MODEL_DIR}/{self.stock_symbol}_training_data.pkl')
-        joblib.dump(self.model, f'{MODEL_DIR}/{self.stock_symbol}_model.pkl')
-        
-        accuracy = self.model.score(X_test, y_test)
-        print(f'دقة النموذج المحدث: {accuracy:.2f}')
+            
+            if len(X) < 2 or len(y) < 2:
+                print("Not enough data to train the model.")
+                return
+            
+        except Exception as e:
+            print(f"Error loading historical data: {e}")
+            return
         
     def generate_tomorrow_prediction(self):
         tomorrow = self.today + timedelta(days=1)
@@ -228,7 +268,7 @@ class SelfLearningAstroTrader(AstroPatternDetector):
     def get_critical_angles(self, positions):
         thresholds = {
             'sun': 5, 'moon':3, 'mercury':7,
-            'venus':4, 'mars':6, 'jupiter':9
+            'venus':4, 'mars':6,
         }
         
         critical = []
@@ -249,6 +289,7 @@ class SelfLearningAstroTrader(AstroPatternDetector):
             print('اكتملت دورة التعلم بنجاح!')
         except Exception as e:
             print(f'خطأ في دورة التعلم: {str(e)}')
+            traceback.print_exc()
     
     def save_daily_report(self, prediction):
         report = {
@@ -271,6 +312,7 @@ schedule.every().day.at("16:00", SAUDI_TZ).do(run_daily_task)
 
 if __name__ == "__main__":
     print('نظام التحليل الفلكي الذاتي التشغيل...')
-    while True:
-        schedule.run_pending()
-        time.sleep(60)
+    #while True:
+        #schedule.run_pending()
+        #time.sleep(60)
+    run_daily_task()

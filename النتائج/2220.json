@@ -1,0 +1,358 @@
+{
+  "reports": [
+    {
+      "symbol": "2220.SR",
+      "report_date": "2025-02-25T22:08:52.384013+03:00",
+      "listing_date": "2010-03-04",
+      "predictions": [
+        {
+          "date": "2025-02-26",
+          "type": "trough",
+          "confidence": 87.78,
+          "critical_angles": [],
+          "aspects": [
+            "moon_sextile_venus",
+            "mercury_trine_mars"
+          ]
+        },
+        {
+          "date": "2025-02-27",
+          "type": "trough",
+          "confidence": 88.84,
+          "critical_angles": [],
+          "aspects": []
+        },
+        {
+          "date": "2025-02-28",
+          "type": "trough",
+          "confidence": 89.43,
+          "critical_angles": [],
+          "aspects": [
+            "sun_conjunction_moon"
+          ]
+        },
+        {
+          "date": "2025-03-01",
+          "type": "trough",
+          "confidence": 93.29,
+          "critical_angles": [],
+          "aspects": [
+            "moon_conjunction_mercury"
+          ]
+        },
+        {
+          "date": "2025-03-02",
+          "type": "neutral",
+          "confidence": 57.4,
+          "critical_angles": [],
+          "aspects": [
+            "moon_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-03",
+          "type": "trough",
+          "confidence": 64.94,
+          "critical_angles": [],
+          "aspects": [
+            "sun_trine_mars"
+          ]
+        },
+        {
+          "date": "2025-03-04",
+          "type": "peak",
+          "confidence": 99.58,
+          "critical_angles": [],
+          "aspects": [
+            "sun_trine_mars"
+          ]
+        },
+        {
+          "date": "2025-03-05",
+          "type": "peak",
+          "confidence": 99.21,
+          "critical_angles": [],
+          "aspects": [
+            "sun_trine_mars"
+          ]
+        },
+        {
+          "date": "2025-03-06",
+          "type": "peak",
+          "confidence": 98.55,
+          "critical_angles": [],
+          "aspects": [
+            "sun_trine_mars",
+            "moon_sextile_mercury",
+            "moon_sextile_venus",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-07",
+          "type": "peak",
+          "confidence": 97.95,
+          "critical_angles": [],
+          "aspects": [
+            "sun_square_moon",
+            "sun_trine_mars",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-08",
+          "type": "peak",
+          "confidence": 97.52,
+          "critical_angles": [],
+          "aspects": [
+            "sun_trine_mars",
+            "moon_square_mercury",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-09",
+          "type": "peak",
+          "confidence": 96.22,
+          "critical_angles": [],
+          "aspects": [
+            "sun_trine_moon",
+            "sun_trine_mars",
+            "moon_conjunction_mars",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-10",
+          "type": "peak",
+          "confidence": 95.65,
+          "critical_angles": [],
+          "aspects": [
+            "sun_trine_mars",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-11",
+          "type": "peak",
+          "confidence": 95.74,
+          "critical_angles": [],
+          "aspects": [
+            "sun_trine_mars",
+            "moon_trine_venus",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-12",
+          "type": "peak",
+          "confidence": 96.48,
+          "critical_angles": [],
+          "aspects": [
+            "sun_trine_mars",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-13",
+          "type": "peak",
+          "confidence": 95.88,
+          "critical_angles": [],
+          "aspects": [
+            "sun_trine_mars",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-14",
+          "type": "peak",
+          "confidence": 93.3,
+          "critical_angles": [],
+          "aspects": [
+            "sun_opposition_moon",
+            "sun_trine_mars",
+            "moon_sextile_mars",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-15",
+          "type": "peak",
+          "confidence": 88.23,
+          "critical_angles": [],
+          "aspects": [
+            "moon_opposition_venus",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-16",
+          "type": "peak",
+          "confidence": 84.61,
+          "critical_angles": [],
+          "aspects": [
+            "moon_opposition_mercury",
+            "moon_square_mars",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-17",
+          "type": "peak",
+          "confidence": 81.83,
+          "critical_angles": [],
+          "aspects": [
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-18",
+          "type": "peak",
+          "confidence": 84.13,
+          "critical_angles": [],
+          "aspects": [
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-19",
+          "type": "peak",
+          "confidence": 86.75,
+          "critical_angles": [],
+          "aspects": [
+            "sun_conjunction_venus",
+            "moon_trine_mars",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-20",
+          "type": "peak",
+          "confidence": 87.47,
+          "critical_angles": [],
+          "aspects": [
+            "sun_trine_moon",
+            "sun_conjunction_venus",
+            "moon_trine_venus",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-21",
+          "type": "peak",
+          "confidence": 73.1,
+          "critical_angles": [],
+          "aspects": [
+            "sun_conjunction_mercury",
+            "sun_conjunction_venus",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-22",
+          "type": "peak",
+          "confidence": 73.34,
+          "critical_angles": [],
+          "aspects": [
+            "sun_conjunction_mercury",
+            "sun_conjunction_venus",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-23",
+          "type": "peak",
+          "confidence": 72.12,
+          "critical_angles": [],
+          "aspects": [
+            "sun_conjunction_mercury",
+            "sun_conjunction_venus",
+            "moon_square_mercury",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-24",
+          "type": "peak",
+          "confidence": 76.86,
+          "critical_angles": [
+            "venus_1.7"
+          ],
+          "aspects": [
+            "sun_conjunction_mercury",
+            "sun_conjunction_venus",
+            "moon_opposition_mars",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-25",
+          "type": "peak",
+          "confidence": 78.9,
+          "critical_angles": [
+            "venus_1.1"
+          ],
+          "aspects": [
+            "sun_sextile_moon",
+            "sun_conjunction_mercury",
+            "sun_conjunction_venus",
+            "moon_sextile_mercury",
+            "moon_sextile_venus",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-26",
+          "type": "peak",
+          "confidence": 77.83,
+          "critical_angles": [
+            "venus_0.5"
+          ],
+          "aspects": [
+            "sun_conjunction_mercury",
+            "sun_conjunction_venus",
+            "mercury_conjunction_venus"
+          ]
+        },
+        {
+          "date": "2025-03-27",
+          "type": "trough",
+          "confidence": 85.8,
+          "critical_angles": [],
+          "aspects": [
+            "sun_conjunction_mercury",
+            "sun_conjunction_venus",
+            "mercury_conjunction_venus"
+          ]
+        }
+      ],
+      "model_performance": {
+        "accuracy": 0.0,
+        "training_days": 3678,
+        "last_update": "2025-02-25T22:08:52.384013+03:00"
+      },
+      "price_history_stats": {
+        "all_time_high": "N/A",
+        "all_time_low": "N/A",
+        "current_price": 17.200000762939453
+      }
+    },
+    {
+      "symbol": "2220.SR",
+      "report_date": "2025-02-25T22:37:18.285879+03:00",
+      "listing_date": "2010-03-04",
+      "predictions": [],
+      "model_performance": {
+        "accuracy": 0.0,
+        "training_days": 3679,
+        "last_update": "2025-02-25T22:37:18.285879+03:00"
+      },
+      "price_history_stats": {
+        "all_time_high": 48.79,
+        "all_time_low": 9.95,
+        "current_price": 17.2
+      }
+    }
+  ],
+  "performance_stats": {}
+}

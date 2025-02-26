@@ -1,0 +1,58 @@
+{
+  "stock": "1111.SR",
+  "report_date": "2025-02-25",
+  "predictions": [
+    {
+      "date": "2025-03-02",
+      "type": "قاع",
+      "confidence": 100.0,
+      "aspects": [
+        "اقتران moon وvenus"
+      ]
+    },
+    {
+      "date": "2025-03-27",
+      "type": "قمة",
+      "confidence": 100.0,
+      "aspects": [
+        "اقتران sun وmercury",
+        "اقتران sun وvenus",
+        "اقتران mercury وvenus"
+      ]
+    },
+    {
+      "date": "2025-03-28",
+      "type": "قمة",
+      "confidence": 100.0,
+      "aspects": [
+        "اقتران sun وmercury",
+        "اقتران sun وvenus",
+        "اقتران mercury وvenus"
+      ]
+    },
+    {
+      "date": "2025-04-03",
+      "type": "قمة",
+      "confidence": 100.0,
+      "aspects": [
+        "سداسي sun وmoon",
+        "اقتران mercury وvenus",
+        "ثلاثي mercury وmars",
+        "ثلاثي venus وmars"
+      ]
+    },
+    {
+      "date": "2025-04-04",
+      "type": "قمة",
+      "confidence": 100.0,
+      "aspects": [
+        "تربيع moon وmercury",
+        "تربيع moon وvenus",
+        "اقتران mercury وvenus",
+        "ثلاثي mercury وmars",
+        "ثلاثي venus وmars"
+      ]
+    }
+  ],
+  "historical_accuracy": 48.18
+}

@@ -1,0 +1,50 @@
+{
+  "stock": "4001.SR",
+  "report_date": "2025-02-25",
+  "predictions": [
+    {
+      "date": "2025-04-29",
+      "type": "قاع",
+      "confidence": 98.82,
+      "aspects": [
+        "تربيع sun وmars",
+        "سداسي moon وvenus"
+      ]
+    },
+    {
+      "date": "2025-04-27",
+      "type": "قاع",
+      "confidence": 98.78,
+      "aspects": [
+        "تربيع sun وmars"
+      ]
+    },
+    {
+      "date": "2025-05-01",
+      "type": "قاع",
+      "confidence": 98.76,
+      "aspects": [
+        "تربيع moon وvenus"
+      ]
+    },
+    {
+      "date": "2025-04-28",
+      "type": "قاع",
+      "confidence": 98.6,
+      "aspects": [
+        "اقتران sun وmoon",
+        "تربيع sun وmars"
+      ]
+    },
+    {
+      "date": "2025-04-30",
+      "type": "قاع",
+      "confidence": 98.6,
+      "aspects": [
+        "تربيع sun وmars",
+        "سداسي moon وmercury"
+      ]
+    }
+  ],
+  "historical_accuracy": 59.06
+}

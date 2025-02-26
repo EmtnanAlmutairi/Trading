@@ -1,0 +1,66 @@
+{
+  "stock": "1120.SR",
+  "year": 2025,
+  "report_date": "2025-02-26",
+  "predictions": {
+    "most_likely_peak": {
+      "date": "2025-04-17",
+      "confidence": 65.34,
+      "significance": 50,
+      "aspects": [
+        "تربيع بين sun وmars",
+        "اقتران بين mercury وvenus",
+        "ثلاثي بين mercury وmars",
+        "ثلاثي بين venus وmars"
+      ],
+      "critical_planets": [
+        {
+          "planet": "mercury",
+          "angle": 0.2,
+          "interpretation": "بداية برج جديد"
+        },
+        {
+          "planet": "mars",
+          "angle": 119.2,
+          "interpretation": "نهاية برج"
+        }
+      ]
+    },
+    "most_likely_trough": {
+      "date": "2025-04-16",
+      "confidence": 98.01,
+      "significance": 75,
+      "aspects": [
+        "تربيع بين sun وmars",
+        "ثلاثي بين moon وmercury",
+        "ثلاثي بين moon وvenus",
+        "ثلاثي بين moon وmars",
+        "اقتران بين mercury وvenus",
+        "ثلاثي بين mercury وmars",
+        "ثلاثي بين venus وmars"
+      ],
+      "critical_planets": [
+        {
+          "planet": "moon",
+          "angle": 238.3,
+          "interpretation": "نهاية برج"
+        },
+        {
+          "planet": "mercury",
+          "angle": 359.5,
+          "interpretation": "نهاية برج"
+        },
+        {
+          "planet": "mars",
+          "angle": 118.8,
+          "interpretation": "نهاية برج"
+        }
+      ]
+    }
+  },
+  "analysis_metrics": {
+    "historical_accuracy": 0.0,
+    "days_analyzed": 307,
+    "total_signals": 27
+  }
+}

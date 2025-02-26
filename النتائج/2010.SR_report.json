@@ -1,0 +1,59 @@
+{
+  "stock": "2010.SR",
+  "report_date": "2025-02-25",
+  "predictions": [
+    {
+      "date": "2025-03-29",
+      "type": "قمة",
+      "confidence": 96.92,
+      "aspects": [
+        "اقتران sun وmoon",
+        "اقتران sun وmercury",
+        "اقتران moon وmercury",
+        "اقتران moon وvenus",
+        "اقتران mercury وvenus"
+      ]
+    },
+    {
+      "date": "2025-05-18",
+      "type": "قاع",
+      "confidence": 90.12,
+      "aspects": [
+        "ثلاثي sun وmoon",
+        "تربيع mercury وmars",
+        "ثلاثي venus وmars"
+      ]
+    },
+    {
+      "date": "2025-05-14",
+      "type": "قاع",
+      "confidence": 89.74,
+      "aspects": [
+        "ثلاثي moon وvenus",
+        "ثلاثي moon وmars",
+        "ثلاثي venus وmars"
+      ]
+    },
+    {
+      "date": "2025-05-16",
+      "type": "قاع",
+      "confidence": 88.94,
+      "aspects": [
+        "تربيع mercury وmars",
+        "ثلاثي venus وmars"
+      ]
+    },
+    {
+      "date": "2025-05-17",
+      "type": "قاع",
+      "confidence": 88.81,
+      "aspects": [
+        "ثلاثي moon وmercury",
+        "تربيع moon وvenus",
+        "تربيع mercury وmars",
+        "ثلاثي venus وmars"
+      ]
+    }
+  ],
+  "historical_accuracy": 54.8
+}

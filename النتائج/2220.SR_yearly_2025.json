@@ -1,0 +1,64 @@
+{
+  "stock": "2220.SR",
+  "year": 2025,
+  "report_date": "2025-02-26",
+  "predictions": {
+    "most_likely_peak": {
+      "date": "2025-03-20",
+      "confidence": 87.47,
+      "significance": 50,
+      "aspects": [
+        "ثلاثي بين sun وmoon",
+        "اقتران بين sun وvenus",
+        "ثلاثي بين moon وvenus",
+        "اقتران بين mercury وvenus"
+      ],
+      "critical_planets": [
+        {
+          "planet": "sun",
+          "angle": 359.3,
+          "interpretation": "نهاية برج"
+        },
+        {
+          "planet": "moon",
+          "angle": 241.5,
+          "interpretation": "بداية برج جديد"
+        }
+      ]
+    },
+    "most_likely_trough": {
+      "date": "2025-03-29",
+      "confidence": 96.55,
+      "significance": 75,
+      "aspects": [
+        "اقتران بين sun وmoon",
+        "اقتران بين sun وmercury",
+        "اقتران بين moon وmercury",
+        "اقتران بين moon وvenus",
+        "اقتران بين mercury وvenus"
+      ],
+      "critical_planets": [
+        {
+          "planet": "moon",
+          "angle": 1.8,
+          "interpretation": "بداية برج جديد"
+        },
+        {
+          "planet": "mercury",
+          "angle": 0.5,
+          "interpretation": "بداية برج جديد"
+        },
+        {
+          "planet": "venus",
+          "angle": 358.7,
+          "interpretation": "نهاية برج"
+        }
+      ]
+    }
+  },
+  "analysis_metrics": {
+    "historical_accuracy": 0.0,
+    "days_analyzed": 307,
+    "total_signals": 15
+  }
+}

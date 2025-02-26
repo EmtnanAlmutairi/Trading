@@ -1,0 +1,8 @@
+yfinance==0.2.54
+pandas==2.2.3
+numpy==2.0.2
+skyfield==1.50
+scikit-learn==1.6.1
+joblib==1.4.2
+pytz==2025.1
+schedule==1.2.2
